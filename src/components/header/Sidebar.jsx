@@ -1,12 +1,14 @@
 import React from 'react';
 import { Box, Flex, VStack, Link as ChakraLink, CloseButton } from '@chakra-ui/react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import sidebarLinks from '../../constants';
 import fort_logo from '../../assets/fort_logo.svg';
 
 const Sidebar = ({ onClose }) =>
 {
+    const location = useLocation();
+
     return (
         <Box
             position="fixed"
@@ -37,6 +39,7 @@ const Sidebar = ({ onClose }) =>
                         display="flex"
                         alignItems="center"
                         justifyContent="space-between"
+                        className={`common-link ${location.pathname === link.route ? 'active' : ''}`}
                     >
                         {link.label}
                         {index === sidebarLinks.length - 1 && <ExternalLinkIcon mx="2px" />}

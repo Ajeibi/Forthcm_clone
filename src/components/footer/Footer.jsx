@@ -3,22 +3,25 @@ import React from 'react';
 import fort_logo_light from '../../assets/fort_logo_light.svg';
 import { ExternalLinkIcon } from '@chakra-ui/icons';
 import { FaInstagram, FaTwitter, FaLinkedin, FaTiktok, FaMedium } from 'react-icons/fa';
-import { NavLink } from 'react-router-dom';
+
 
 const Footer = () =>
 {
     return (
-        <Box bg="#101828" color="white" p={10}>
-            <NavLink href="/" onClick={() => window.scrollTo(0, 0)}>
+        <Box bg="#101828" color="white" py={10} px={{ base: '20px', lg: 10 }}>
+            <Link href="/" onClick={() => window.scrollTo(0, 0)}>
                 <img src={fort_logo_light} alt="logo" />
-            </NavLink>
-            <Flex pt={5}>
-                <HStack spacing="24px">
+            </Link>
+            <Flex pt={5} fontWeight="bold">
+                <HStack spacing="24px" flexDirection={{ base: 'column', md: 'row' }} align='flex-start'>
                     <a href="/about-us" onClick={() => window.scrollTo(0, 0)}>
                         About Us
                     </a>
                     <a href="/contact-us" onClick={() => window.scrollTo(0, 0)}>
                         Contact Us
+                    </a>
+                    <a href="https://medium.com/@fort_hcm" target="_blank" rel="noopener noreferrer">
+                        Blog
                     </a>
                     <a href="https://jobs.forthcm.com/" target="_blank" rel="noopener noreferrer">
                         Jobs <ExternalLinkIcon />
@@ -32,8 +35,8 @@ const Footer = () =>
                 </HStack>
             </Flex>
             <Divider borderColor="white" py={5} />
-            <Flex justify="space-between" align="center" py={10}>
-                <Text>© 2024 Fort. Powered by Pyranex HQ. All rights reserved.</Text>
+            <Flex justify="space-between" py={10} flexDirection={{ base: 'column-reverse', md: 'row' }}>
+                <Text py={{ base: 5 }}>© 2024 Fort. Powered by Pyranex HQ. All rights reserved.</Text>
                 <HStack spacing={4} color="gray.400">
                     <Link href="https://www.instagram.com" isExternal>
                         <Icon as={FaInstagram} boxSize={7} />

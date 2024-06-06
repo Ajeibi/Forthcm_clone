@@ -6,15 +6,19 @@ import { GoArrowUpRight } from "react-icons/go";
 const HomeTitle = () =>
 {
     return (
-        <Box textAlign="center" m={10}>
-            <Heading as="h1" size="xl" fontWeight="bold" color="black" lineHeight="1.5">
+        <Box textAlign="center" m={{ base: '20px', lg: 10 }}>
+            <Heading as="h1" fontSize={{ base: '24px', lg: "30px" }} fontWeight="bold" color="black" lineHeight="1.5">
                 Start Recruiting With Fort Now
             </Heading>
-            <Text mt={2} mb={5} fontSize="md" opacity={0.9}>
+            <Text mt={2} mb={5} fontSize={{ base: '15.5px', lg: "16px" }} opacity={0.9} sx={{
+                '& br': {
+                    display: { base: 'none', md: 'none', lg: 'block' }
+                }
+            }}>
                 Join the exceptional Recruiters and Organizations leveraging <br />
                 Fort to elevate their recruitment.
             </Text>
-            <Flex justifyContent="center" gap={3}>
+            <Flex justifyContent="center" gap={3} direction={{ base: 'column', lg: 'row' }} mb={{ base: '90px' }}>
                 <Button
                     colorScheme="teal"
                     size="lg"

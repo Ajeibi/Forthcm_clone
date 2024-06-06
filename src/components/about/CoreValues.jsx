@@ -3,17 +3,37 @@ import { Box, Flex, Heading, Text } from '@chakra-ui/react';
 import { IoFlashOutline } from 'react-icons/io5';
 import { PiChatsCircleBold, PiRecycleLight } from 'react-icons/pi';
 import { GiProgression } from 'react-icons/gi';
+import fort_recruitment_use_case from "../../assets/fort_recruitment_use_case.png"
 
 const CoreValues = () =>
 {
     return (
-        <section>
-            <Flex bg="#F5FFFA" opacity={0.9} pb={20} px={10} alignItems="center">
-                <Box flex="4" pr={20} mx="auto">
-                    <Heading as="h2" size="xl" mb={4} color="black">
+        <Box>
+            <Flex bg={{ lg: "#F5FFFA" }} opacity={0.9}
+                pb={{ base: "47px", lg: 20 }}
+                px={{ lg: 10 }} alignItems="center"
+                direction={{ base: 'column', md: 'row' }}
+                pt={{ base: "88px", lg: 0 }}
+            >
+                <Box flex="4" pr={{ lg: 20 }} mx={"auto"} pt={{ lg: 20 }} textAlign={{ base: 'center', md: 'left' }}>
+                    <Heading
+                        as="h2"
+                        mb={4}
+                        color={{ base: '#0BA043' }}
+                        fontSize={{ base: '12px' }}
+                        display={{ base: 'block', md: 'none' }}
+                    >
                         Core Values
                     </Heading>
-                    <Text fontSize="xl" mb={8} pr={20}>
+                    <Heading
+                        as="h2"
+                        fontSize={{ base: '20px', lg: '36px' }}
+                        mb={4}
+                        color='black'
+                    >
+                        Core Values
+                    </Heading>
+                    <Text fontSize={{ base: '16px', lg: '20px' }} mb={{ lg: 8 }} pr={{ lg: 20 }}>
                         Our core values embody the essence of our
                         human capital management (HCM) solution,
                         defining our approach to business, our
@@ -23,7 +43,7 @@ const CoreValues = () =>
                 </Box>
 
                 <Box flex="6">
-                    <Flex mb={20} pt={20}>
+                    <Flex mb={{ base: 10, lg: 20 }} pt={20} direction={{ base: 'column', md: 'row' }}>
                         <Box flex="1" pr={10}>
                             <Box mb={5} style={{ display: 'inline-block', border: '1px solid rgba(0, 0, 0, 0.2)', borderRadius: '10%', padding: '4px' }} color="teal.600"><GiProgression size={24} /></Box>
                             <Heading as="h3" size="md" mb={5}>Growth</Heading>
@@ -37,7 +57,7 @@ const CoreValues = () =>
                             </Text>
                         </Box>
 
-                        <Box flex="1">
+                        <Box flex="1" mt={{ base: 10, lg: 0 }}>
                             <Box mb={5} style={{ display: 'inline-block', border: '1px solid rgba(0, 0, 0, 0.2)', borderRadius: '10%', padding: '4px' }} color="teal.600"><PiRecycleLight size={24} /></Box>
                             <Heading as="h3" size="md" mb={5}>Resilience & Integrity</Heading>
                             <Text fontSize="md">
@@ -52,7 +72,7 @@ const CoreValues = () =>
                     </Flex>
 
 
-                    <Flex>
+                    <Flex direction={{ base: 'column', md: 'row' }}>
                         <Box flex="1" pr={10}>
                             <Box mb={5} style={{ display: 'inline-block', border: '1px solid rgba(0, 0, 0, 0.2)', borderRadius: '10%', padding: '4px' }} color="teal.600"><PiChatsCircleBold size={24} /></Box>
                             <Heading as="h3" size="md" mb={5}>Collaboration</Heading>
@@ -66,7 +86,7 @@ const CoreValues = () =>
                             </Text>
                         </Box>
 
-                        <Box flex="1">
+                        <Box flex="1" mt={{ base: 10, lg: 0 }}>
                             <Box mb={5} style={{ display: 'inline-block', border: '1px solid rgba(0, 0, 0, 0.2)', borderRadius: '10%', padding: '4px' }} color="teal.600"><IoFlashOutline size={24} /></Box>
                             <Heading as="h3" size="md" mb={5}>Inclusion</Heading>
                             <Text fontSize="md">
@@ -79,8 +99,11 @@ const CoreValues = () =>
                         </Box>
                     </Flex>
                 </Box>
-            </Flex>
-        </section>
+            </Flex >
+            <Box pb={20} display={{ base: 'block', md: 'none' }}>
+                <img src={fort_recruitment_use_case} alt="fort_recruitment_use_case" />
+            </Box>
+        </Box >
     )
 }
 

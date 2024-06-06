@@ -5,24 +5,23 @@ import React from 'react'
 const HomeAccordion = () =>
 {
     return (
-        <Box p={20}>
+        <Box px={{ base: '20px', lg: 20 }} py={{ base: '64px', lg: 20 }}>
             <Box textAlign="center" mb={8}>
-                <Heading as="h1" size="xl" fontWeight="bold" color="black" lineHeight="1.5">
+                <Heading as="h1" fontSize={{ base: '24px', lg: "30px" }} fontWeight="bold" color="black" lineHeight="1.5">
                     Frequently Asked Questions
                 </Heading>
-                <Text mt={2} mb={20} fontSize="md" opacity={0.9}>
+                <Text px={{ base: '100px', lg: 0 }} mt={{ base: '16px', lg: 2 }} mb={{ lg: 20 }} fontSize="md" opacity={0.9}>
                     Everything you need to know about Fort.
                 </Text>
             </Box>
-            <Box px={20}>
-                <Accordion allowToggle mx={20}>
+            <Box px={{ lg: 20 }}>
+                <Accordion allowToggle mx={{ lg: 20 }}>
                     <AccordionItem>
                         {({ isExpanded }) => (
                             <>
                                 <h2>
                                     <AccordionButton
-                                        _hover={{ bg: 'none' }} // Remove hover effect
-                                        borderTopWidth={0} // Remove top border
+                                        _hover={{ bg: 'none' }}
                                     >
                                         <Box as='span' flex='1' textAlign='left' py={4}>
                                             What is Fort?

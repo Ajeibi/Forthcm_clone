@@ -20,7 +20,7 @@ const Header = () =>
 
     return (
         <>
-            <Box px="12" py="4" bg={isHomePage ? 'white' : 'gray.50'}>
+            <Box px={{ base: '20px', lg: "12" }} py="4" bg={isHomePage ? 'white' : 'gray.50'}>
                 <Flex align="center" justify="space-between">
                     <Link to="/" onClick={() => setSidebarOpen(false)}>
                         <img src={fort_logo} alt="logo" />
@@ -30,9 +30,11 @@ const Header = () =>
                     </Flex>
                     <IconButton
                         display={{ base: 'flex', md: 'none' }}
-                        icon={<HamburgerIcon />}
+                        icon={<HamburgerIcon boxSize={6} />}
                         onClick={toggleSidebar}
                         aria-label="Open Menu"
+                        bg='none'
+                        _hover='none'
                     />
                     <Button
                         as={Link}

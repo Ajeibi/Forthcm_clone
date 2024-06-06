@@ -9,18 +9,18 @@ import CoreValues from './CoreValues';
 const AboutHero = () =>
 {
     return (
-        <>
-            <Box px={10} position="relative">
+        <Box px={{ base: "20px", lg: 0 }}>
+            <Box px={{ lg: 10 }} position="relative">
                 <Box
                     position="absolute"
-                    top={20}
+                    top={{ base: '56px', lg: 20 }}
                     left={0}
                     right={0}
                     bottom={0}
                     bgImage={`url(${fort_pricing_hero})`}
                     bgRepeat="no-repeat"
                     bgPosition="top"
-                    bgSize="70%"
+                    bgSize={{ lg: "70%" }}
                     zIndex={-1}
                     _before={{
                         content: '""',
@@ -39,26 +39,38 @@ const AboutHero = () =>
                         focus on the greatest assets,<br />
                         their people
                     </Heading>
+
+                    <Text
+                        display={{ base: 'block', md: 'none' }}
+                        textAlign="center"
+                        fontSize="18px"
+                        mb={{ base: '8', sm: '4' }}
+                        color="#535353"
+                        lineHeight={{ base: '1.75', md: '1.75', lg: '1.5' }}
+                        pt={{ base: 5, lg: 0 }}
+                    >
+                        Fort simplifies your hiring process, allowing you to source, screen, and select candidates who are the perfect fit for your organisation without breaking the bank or losing out on hiring the best fit.
+                    </Text>
                 </Box>
 
                 <Box m={0} p={0}>
                     <Image src={fort_sofa_with_people} alt='fort_sofa_with_people' width="100%" />
                 </Box>
 
-                <Flex pt={20} pb={5}>
-                    <Box flex="1" pt={10}>
-                        <Box pr={20}>
-                            <Heading as="h2" size="xl" mb={4} color="black">
+                <Flex pt={{ base: '64px', lg: 20 }} pb={5} direction={{ base: 'column', md: 'row' }}>
+                    <Box flex="1" pt={{ lg: 10 }} textAlign={{ base: 'center', md: 'left' }}>
+                        <Box pr={{ base: 0, lg: 20 }}>
+                            <Heading as="h2" fontSize={{ base: '18px', lg: "30px" }} mb={4} color="black">
                                 Our Mission
                             </Heading>
-                            <Text fontSize="xl" mb={20} pr={20}>
+                            <Text fontSize={{ base: '16px', lg: "20px" }} mb={20} pr={{ lg: 20 }}>
                                 To harness, enhance, and enable human
                                 capital in Africa through innovative solutions.
                             </Text>
-                            <Heading as="h2" size="xl" mb={4} color="black">
+                            <Heading as="h2" fontSize={{ base: '18px', lg: "30px" }} mb={4} color="black">
                                 Our Vision
                             </Heading>
-                            <Text fontSize="xl" mb={20} pr={20}>
+                            <Text fontSize={{ base: '16px', lg: "20px" }} mb={{ base: '64px', lg: 20 }} pr={{ lg: 20 }}>
                                 To be the leading provider of human capital
                                 management solutions and resources in
                                 Africa, unlocking the full potential of
@@ -67,13 +79,13 @@ const AboutHero = () =>
                             </Text>
                         </Box>
                     </Box>
-                    <Box flex="1" pt={5}>
+                    <Box flex="1" pt={{ lg: 5 }}>
                         <img src={fort_mission_vision} alt="fort_mission_vision" />
                     </Box>
                 </Flex>
             </Box>
             <CoreValues />
-        </>
+        </Box>
     );
 };
 
